@@ -1,8 +1,6 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:local_film_festival/bottomnavigation.dart';
-import 'package:local_film_festival/login.dart';
+
 
 class register extends StatefulWidget {
   const register({super.key});
@@ -25,7 +23,7 @@ TextEditingController addresscontroller=TextEditingController();
         body: Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/background.jpg'), fit: BoxFit.cover)),
+              image: AssetImage('assets/background.png'), fit: BoxFit.cover)),
       child: Center(
         child: SingleChildScrollView(
           child: Padding(

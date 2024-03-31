@@ -1,8 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
+import 'package:local_film_festival/events.dart';
 import 'package:local_film_festival/filmdetails.dart';
+import 'package:local_film_festival/login.dart';
+import 'package:local_film_festival/main.dart';
+import 'package:local_film_festival/profile.dart';
+import 'package:local_film_festival/screenshedule.dart';
 
 class homepage extends StatefulWidget {
   const homepage({super.key});
@@ -45,7 +47,7 @@ class _homepageState extends State<homepage> {
         child: Column(
           children: [
             UserAccountsDrawerHeader(
-              decoration: BoxDecoration(color: Colors.red),
+              decoration: BoxDecoration(color: appcolor),
               accountName: Text('Shifana'),
               accountEmail: Text('shifana@gmail.com'),
               currentAccountPicture: CircleAvatar(
@@ -53,37 +55,106 @@ class _homepageState extends State<homepage> {
                 backgroundImage: AssetImage('assets/profile.jpg'),
               ),
             ),
-            ListTile(
-              leading: Icon(Icons.dashboard),
-              title: Text('Dashboard'),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => homepage(),));
+              },
+              child: ListTile(
+                leading: Icon(Icons.dashboard),
+                title: Text('Dashboard'),
+              ),
             ),
-            ListTile(
-              leading: Icon(Icons.event),
-              title: Text('Events'),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => eventpage(),));
+              },
+              child: ListTile(
+                leading: Icon(Icons.event),
+                title: Text('Events'),
+              ),
             ),
-            ListTile(
-              leading: Icon(Icons.view_array),
-              title: Text('View Screen'),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => screenschedulescreen(),));
+              },
+              child: ListTile(
+                leading: Icon(Icons.schedule),
+                title: Text('Screen Schedule'),
+              ),
             ),
-            ListTile(
-              leading: Icon(Icons.person),
-              title: Text('Profile'),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => profilepage(),));
+              },
+              child: ListTile(
+                leading: Icon(Icons.person),
+                title: Text('Profile'),
+              ),
             ),
-            ListTile(
-              leading: Icon(Icons.feedback),
-              title: Text('Feedback'),
+            GestureDetector(
+              onTap: () {
+                
+              },
+              child: ListTile(
+                leading: Icon(Icons.bookmark_border),
+                title: Text('View Award'),
+              ),
             ),
-            ListTile(
-              leading: Icon(Icons.support),
-              title: Text('Support'),
+            GestureDetector(
+              onTap: () {
+                
+              },
+              child: ListTile(
+                leading: Icon(Icons.feedback),
+                title: Text('Feedback'),
+              ),
             ),
-            ListTile(
-              leading: Icon(Icons.help),
-              title: Text('Help'),
+            GestureDetector(
+              onTap: () {
+                
+              },
+              child: ListTile(
+                leading: Icon(Icons.support),
+                title: Text('Support'),
+              ),
             ),
-            ListTile(
-              leading: Icon(Icons.logout),
-              title: Text('Logout'),
+            GestureDetector(
+              onTap: () {
+                
+              },
+              child: ListTile(
+                leading: Icon(Icons.help),
+                title: Text('Help'),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: Text('Logout',style: TextStyle(fontWeight: FontWeight.bold),),
+                  content: Text('Are you want exit this app?',style: TextStyle(fontSize: 15),),
+                  actions: <Widget>[
+                   ElevatedButton(
+                    style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(appcolor)),
+                    onPressed: (){
+                    Navigator.pop(context);
+                   }, child:Text('CANCEL',style: TextStyle(color: Colors.white),)),
+                     ElevatedButton(
+                      style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(appcolor)),
+                      onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen(),));
+                     }, child:Text('OK',style: TextStyle(color: Colors.white),))
+                  ],
+                );
+              },
+            );
+              },
+              child: ListTile(
+                leading: Icon(Icons.logout),
+                title: Text('Logout'),
+              ),
             ),
           ],
         ),

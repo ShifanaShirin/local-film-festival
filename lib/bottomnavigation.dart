@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:local_film_festival/category.dart';
-import 'package:local_film_festival/colors.dart';
 import 'package:local_film_festival/events.dart';
 import 'package:local_film_festival/homepage.dart';
+import 'package:local_film_festival/main.dart';
+import 'package:local_film_festival/profile.dart';
 
 class BottomNavigationScreen extends StatefulWidget {
   const BottomNavigationScreen({super.key});
@@ -16,7 +17,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
     homepage(),
     categorypage(),
     eventpage(),
-    const Text('Profile')
+    profilepage()
   ];
   int currentPageIndex = 0;
 

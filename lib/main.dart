@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:local_film_festival/bottomnavigation.dart';
-import 'package:local_film_festival/events.dart';
-import 'package:local_film_festival/homepage.dart';
-import 'package:local_film_festival/login.dart';
+import 'package:local_film_festival/splashscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +17,8 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
           useMaterial3: true,
         ),
-        home: LoginScreen()
+        home: SplashScreen()
     );
   }
 }
+Color appcolor = Color.fromARGB(255, 219, 22, 8);

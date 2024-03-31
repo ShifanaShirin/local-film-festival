@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:local_film_festival/register.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -20,7 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/background.jpg'), fit: BoxFit.cover)),
+                image: AssetImage('assets/background.png'), fit: BoxFit.cover)),
         child: Center(
           child: SingleChildScrollView(
             child: Padding(

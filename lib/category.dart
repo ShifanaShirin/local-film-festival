@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:local_film_festival/colors.dart';
+import 'package:local_film_festival/main.dart';
+
 
 class categorypage extends StatefulWidget {
   const categorypage({super.key});
